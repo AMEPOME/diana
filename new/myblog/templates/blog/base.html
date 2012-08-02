@@ -1,0 +1,29 @@
+<!-- parent template  -->
+<html>
+<head>
+
+<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css"/>
+<title> myblogtitle</title>
+</head>
+
+<body leftmargin="70px" topmargin="70px" marginwidth="55px" marginheight="65px">
+<div class="container">
+
+<h1> WELCOME TO MY DJANGO BLOG PAGE </h1>
+
+<a href="/blog/posts" >
+<h2>link to myblogtitle</h2>
+</a> 
+<div id="content">
+
+{% block content %}
+
+{% endblock %}
+ 
+</div>
+</div>
+</body>
+</html>
+
+
+	

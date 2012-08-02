@@ -1,0 +1,23 @@
+<!-- this is a child template of the base html -->
+
+
+{% extends "blog/base.html" %}
+{% block content %}
+{% for post in posts %}
+<h2> 
+<a href="{{ post.get_absolute_url }}">
+{{ post.title }}
+</a>
+</h2>
+<ul>
+
+<li>Created: {{ post.created }} </li>
+<li> Last updated:{{ post.updated }}  </li>
+<li> {{ post.body|slice:":60" }} </li>   <!-- the slice 60 limit it to first 60 characters -->
+
+</ul>
+
+
+
+{% endfor %}
+{% endblock %}

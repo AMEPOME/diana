@@ -1,0 +1,15 @@
+<!-- this is a child template of the base html -->
+
+{% extends "blog/base.html" %}
+{% block content %}
+<p> You search for: {{term}} </p> 
+<ul>
+{% for post in posts %}
+
+<h3>{{ post.title }}</h3>
+
+
+{% endfor %}
+</ul>
+
+{% endblock %}

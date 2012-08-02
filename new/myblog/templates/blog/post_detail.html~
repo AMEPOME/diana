@@ -1,0 +1,38 @@
+<!-- this is a child template of the base html -->
+
+{% extends "blog/base.html" %}
+{% block content %}
+
+<ol>
+<h1>{{ post.title }}</h1>
+<h6> {{ post.body }} </h6>
+<h6> datecreated:    {{ post.created }} </h6>
+<h6> dateupdated:    {{ post.updated }}  </h6>
+
+</ol>
+
+{% for c in comments %}
+   
+<li><h2> {{ c.author }}</h2></li>
+ <p> {{ c.body }} </p>
+ <h5> datecreated:  {{ c.created}}</h5> 
+ <h5> dateupdated:  {{ c.updated }}</h5> 
+<div>
+
+<a href= "/blog/comments/{{ c.id }}/edit">Edit Comment
+</a>
+
+</div>
+{% endfor %}
+
+<h3> New comment: </h3>
+<div>
+
+<form method='post' action="">
+    {{ form.as_p }}  
+    <input type='submit' name='Submit'>
+</form>
+</div>
+{% endblock %}
+
+
